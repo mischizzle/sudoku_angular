@@ -28,3 +28,17 @@
   content: "";
   padding: 0;
 }
+
+/* sudoku css */
+/* TO DO: USE PREPROCESSOR */
+
+#grid {
+  width:200px;
+}
+
+.grid-box {
+  float:left; 
+  width:20px; 
+  border:1px solid gray; 
+  text-align:center;
+}

@@ -5,9 +5,16 @@ function SudokuCtrl($scope) {
 
   $scope.title = "Sudoku, with AngularJS";
 
-  $scope.sudoku = [
-    {"name" : "game1"}
-    //{"grid" : [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]}
-  ];
-  //$scope.sudoku.grid = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+  $scope.difficulty = "Easy";
+
+  //refactor: have this in a 9x9 grid, and not linear
+  $scope.grid = SudokuGen();
+}
+
+function SudokuGen() {
+  var thePuzzle = new Sudoku();
+  thePuzzle.newGame();
+  thePuzzle.solveGame();
+
+  return thePuzzle.matrix;
 }
