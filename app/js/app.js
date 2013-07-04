@@ -3,7 +3,7 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', ['myApp.controllers']).
-/*
+
   config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/view1', 
@@ -20,4 +20,3 @@ angular.module('myApp', ['myApp.controllers']).
     
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
-*/

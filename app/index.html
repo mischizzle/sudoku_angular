@@ -15,23 +15,14 @@
 <body ng-controller="SudokuCtrl">
 
   <h2>{{title}}</h2>
-  
-  <!--<input type="text" ng-model="name">
-  <h2>Hello {{name}}!</h2>-->
 
-  <div>{{difficulty}}</div>
+    <div>{{difficulty}}</div>
 
   <div id="grid">
-    <div ng-repeat="num in grid" class="grid-box">{{num}}</div>
+    <div ng-repeat="num in grid" class="grid-box">
+      <span ng-click="test()">{{num}}</span>
+    </div>
   </div>
 
- 
-
-  <!--  
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
-  -->
 </body>
 </html>

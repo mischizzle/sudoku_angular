@@ -9,6 +9,10 @@ function SudokuCtrl($scope) {
 
   //refactor: have this in a 9x9 grid, and not linear
   $scope.grid = SudokuGen();
+
+  $scope.test = function() {
+    console.log("hi!");
+  }
 }
 
 function SudokuGen() {
@@ -18,3 +22,4 @@ function SudokuGen() {
 
   return thePuzzle.matrix;
 }
+
