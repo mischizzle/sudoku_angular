@@ -19,10 +19,32 @@
     <div>{{difficulty}}</div>
 
   <div id="grid">
-    <div ng-repeat="num in grid" class="grid-box">
-      <span ng-click="test()">{{num}}</span>
+    <div ng-repeat="num in gameGrid" class="grid-box">
+      <span ng-click="inputFromBoard($index, num)">{{num}}</span>
     </div>
   </div>
+
+  <div id="numOptions" ng-show="permissions">
+    <table width="200" height="200">
+      <tr>
+        <td><button ng-click="inputFromNumbers(1)">1</button></td>
+        <td><button ng-click="inputFromNumbers(2)">2</button></td>
+        <td><button ng-click="inputFromNumbers(3)">3</button></td>
+      </tr>
+      <tr>
+        <td><button ng-click="inputFromNumbers(4)">4</button></td>
+        <td><button ng-click="inputFromNumbers(5)">5</button></td>
+        <td><button ng-click="inputFromNumbers(6)">6</button></td>
+      </tr>
+      <tr>
+        <td><button ng-click="inputFromNumbers(7)">7</button></td>
+        <td><button ng-click="inputFromNumbers(8)">8</button></td>
+        <td><button ng-click="inputFromNumbers(9)">9</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="height: 400px; border: 1px solid #cdcdcd;"></div>
 
 </body>
 </html>

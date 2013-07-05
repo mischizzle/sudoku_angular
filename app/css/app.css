@@ -33,12 +33,75 @@
 /* TO DO: USE PREPROCESSOR */
 
 #grid {
-  width:200px;
+  width:400px;
 }
 
 .grid-box {
-  float:left; 
-  width:20px; 
-  border:1px solid gray; 
-  text-align:center;
+  float: left; 
+  width: 40px; 
+  border: 1px solid gray; 
+  text-align: center;
 }
+
+.grid-box span {
+  font-size: 2em;
+  display: block;
+  padding: 10px 0;
+}
+
+/* lame that nth-child doesn't support modulus, so writing this out longhand */
+.grid-box:nth-child(1),
+.grid-box:nth-child(2),
+.grid-box:nth-child(3),
+.grid-box:nth-child(7),
+.grid-box:nth-child(8),
+.grid-box:nth-child(9),
+.grid-box:nth-child(10),
+.grid-box:nth-child(11),
+.grid-box:nth-child(12),
+.grid-box:nth-child(16),
+.grid-box:nth-child(17),
+.grid-box:nth-child(18),
+.grid-box:nth-child(19),
+.grid-box:nth-child(20),
+.grid-box:nth-child(21),
+.grid-box:nth-child(25),
+.grid-box:nth-child(26),
+.grid-box:nth-child(27),
+.grid-box:nth-child(31),
+.grid-box:nth-child(32),
+.grid-box:nth-child(33),
+.grid-box:nth-child(40),
+.grid-box:nth-child(41),
+.grid-box:nth-child(42),
+.grid-box:nth-child(49),
+.grid-box:nth-child(50),
+.grid-box:nth-child(51),
+.grid-box:nth-child(55),
+.grid-box:nth-child(56),
+.grid-box:nth-child(57),
+.grid-box:nth-child(61),
+.grid-box:nth-child(62),
+.grid-box:nth-child(63),
+.grid-box:nth-child(64),
+.grid-box:nth-child(65),
+.grid-box:nth-child(66),
+.grid-box:nth-child(70),
+.grid-box:nth-child(71),
+.grid-box:nth-child(72),
+.grid-box:nth-child(73),
+.grid-box:nth-child(74),
+.grid-box:nth-child(75),
+.grid-box:nth-child(79),
+.grid-box:nth-child(80),
+.grid-box:nth-child(81)
+ {
+  background: #e1e1e1;
+} 
+
+#numOptions table {
+  width: 100px; 
+  height: 100px;
+}
+
+

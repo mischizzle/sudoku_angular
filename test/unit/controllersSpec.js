@@ -14,7 +14,7 @@ describe('Sudoku controllers', function(){
       ctrl = new SudokuCtrl(scope);
     });
 
-    it('should have the title "sudoku"', function() {
+    it('should have the correct title', function() {
       expect(scope.title).toEqual("Sudoku, with AngularJS");
     });
 
@@ -22,16 +22,22 @@ describe('Sudoku controllers', function(){
       expect(scope.difficulty).toEqual("Easy");
     });
 
-    it('should have a grid of 81 items', function() {
-      expect(scope.grid.length).toEqual(81);
+    it('should have a game grid of 81 items', function() {
+      expect(scope.gameGrid.length).toEqual(81);
     });
+
+    xit('should test user input from the board');
+
+    xit('should test user input from the number options');
+
   });
 
-  describe('SudokuGen', function() {
+  //TO DO: refactor this to go into services; not part of the controller
+  describe('SudokuSolutionArr', function() {
 
     it('should return an array of 81 elements', function() {
 
-      var ctrl = new SudokuGen();
+      var ctrl = new SudokuSolutionArr();
 
       expect(ctrl.length).toBe(81);
 
