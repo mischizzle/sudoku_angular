@@ -1,0 +1,33 @@
+{
+  "name": "Sudoku",
+  "version": "1.0.0",
+  "description": "Sudoku game in AngularJS",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-sass": "~0.4.0",
+    "grunt-contrib-watch": "~0.4.4"
+  },
+  "devDependencies": {
+    "grunt-karma": "~0.4.5"
+  },
+  "scripts": {
+    "test": "karma start ./config/karma.conf.js $*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mischizzle/sudoku_angular.git"
+  },
+  "keywords": [
+    "sudoku"
+  ],
+  "author": "Michelle Anderson",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/mischizzle/sudoku_angular/issues"
+  }
+}
