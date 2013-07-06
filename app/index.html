@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app>
+<html lang="en" ng-app="sudoku">
 <head>
 
   <title>Sudoku AngularJS App</title>
@@ -11,12 +11,19 @@
 
   <script src="lib/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+
+
 </head>
 <body ng-controller="SudokuCtrl">
 
   <h2>{{title}}</h2>
 
-    <div>{{difficulty}}</div>
+
+<!--   <h2>{{hiWorld}}</h2> -->
+
+  <div>{{difficulty}}</div>
 
   <div id="grid">
     <div ng-repeat="num in gameGrid" class="grid-box">

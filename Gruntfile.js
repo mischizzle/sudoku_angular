@@ -53,7 +53,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // Default Task
-  grunt.registerTask('default', ['sass:dev'], ['grunt:unit']);
+  grunt.registerTask('default', ['sass:dev']);
 
   // Unit Testing Task
   //grunt.registerTask('test', ['connect', 'jasmine']);
