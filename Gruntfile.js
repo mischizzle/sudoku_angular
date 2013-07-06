@@ -31,10 +31,17 @@ module.exports = function (grunt) {
         }
       },
 
+      karma: {
+        unit: {
+          configFile: 'config/karma.conf.js',
+          autoWatch: true
+        }
+      },
+
       // Run: `grunt watch` from command line for this section to take effect
       watch: {
         //files: ['<%= jshint.files %>', '<%= sass.dev.src %>'],
-        files: ['<%= sass.dev.src %>'],
+        files: ['<%= sass.dev.src %>', '<%= karma.unit.configFile %>'],
         tasks: 'default'
       }
     });
@@ -43,9 +50,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   //grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-karma');
 
   // Default Task
-  grunt.registerTask('default', ['sass:dev']);
+  grunt.registerTask('default', ['sass:dev'], ['grunt:unit']);
 
   // Unit Testing Task
   //grunt.registerTask('test', ['connect', 'jasmine']);
