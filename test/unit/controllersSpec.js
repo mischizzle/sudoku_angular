@@ -40,11 +40,5 @@ describe('Sudoku controllers', function(){
     it('should have a game grid of 81 items', function() {
       expect(scope.gameGrid.length).toEqual(81);
     });
-
-    it('should test user input from the board');
-
-    xit('should test user input from the number options');
-
   });
-
 });

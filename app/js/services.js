@@ -38,9 +38,6 @@ sudoku.factory('sudokuFactory', function() {
 		},
 
 		verifyAnswer: function(n, index, gameArr, solutionArr) {
-			console.log(n);
-			console.log(gameArr[index]);
-			console.log(solutionArr[index])
 			if(n === solutionArr[index]) {
       	console.log("you're right smartie pants");
       	gameArr[index] = n;
