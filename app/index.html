@@ -18,12 +18,19 @@
 </head>
 <body ng-controller="SudokuCtrl">
 
-  <h2>{{title}}</h2>
+  <!-- <h2>{{title}}</h2> -->
 
 
 <!--   <h2>{{hiWorld}}</h2> -->
 
-  <div>{{difficulty}}</div>
+  <div>Difficulty: {{level}}</div>
+
+  <form name="myForm" id="settings">
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="easy" checked>Easy</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="medium">Medium</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="hard">Hard</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="impossible">Impossible</label>
+  </form>
 
   <div id="grid">
     <div ng-repeat="num in gameGrid" class="grid-box">
@@ -32,7 +39,7 @@
   </div>
 
   <div id="numOptions" ng-show="permissions">
-    <table width="200" height="200">
+    <table>
       <tr>
         <td><button ng-click="inputFromNumbers(1)">1</button></td>
         <td><button ng-click="inputFromNumbers(2)">2</button></td>
@@ -50,8 +57,6 @@
       </tr>
     </table>
   </div>
-
-  <div style="height: 400px; border: 1px solid #cdcdcd;"></div>
 
 </body>
 </html>

@@ -8,10 +8,18 @@ function SudokuCtrl($scope, sudokuFactory) {
   var gameArray = sudokuFactory.getGameArray(20, indexArray, solutionArr);
 
   $scope.title = "Sudoku, by AngularJS";
-  $scope.difficulty = "easy";
   $scope.gameGrid = gameArray;
   $scope.permissions = false;
   $scope.userSelectionIndex = 0;
+  $scope.level = "easy";
+
+
+  $scope.changeLevel = function(level) {
+    console.log(level);
+    //restart game with new board
+    //sudokuFactory.newGame();
+    return true;
+  }
 
 
   $scope.inputFromBoard = function(index, boardNum) {

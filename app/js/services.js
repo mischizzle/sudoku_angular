@@ -7,6 +7,10 @@ var sudoku = angular.module('sudoku', []);
 sudoku.factory('sudokuFactory', function() {
 	return {
 
+		newGame: function() {
+
+		},
+
 		getSolutionArray: function() {
 			var thePuzzle = new Sudoku();
 			thePuzzle.newGame();
