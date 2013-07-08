@@ -5,46 +5,72 @@
 var sudoku = angular.module('sudoku', []);
 
 sudoku.factory('sudokuFactory', function() {
+
 	return {
+		newGame: function(level) {
+			var solution = this.generateSolution();
+			var level = this.processLevel(level);
+  		var gameObj = this.generateGameObj(level, solution);
 
-		newGame: function() {
-
+			return gameObj;
 		},
 
-		getSolutionArray: function() {
+		generateSolution: function() {
 			var thePuzzle = new Sudoku();
 			thePuzzle.newGame();
 			thePuzzle.solveGame();
+
 			return thePuzzle.matrix;
 		},
 
-		getGameArray: function(n, indexArr, gameArr) {
-			var difficultyArr = indexArr;
-	    var gameArray = gameArr.slice(0);
-	    var difficulty = n;
-	    var randValue;
+		generateGameObj: function(level, solution) {
+	    var gameArray = solution.slice(0);
+	   	var gameObj = {};
+	   	var tmpArr = [];
+	   	var randValue;
+	   	var randIndex;
 
-	    while(n){
-	      randValue = Math.floor((Math.random()*difficultyArr.length)+1)
+	   	for(var i=0; i<81; i++) {
+	   		tmpArr[i] = i;
+	   	}
+
+	    while(level){
+	      randIndex = Math.floor((Math.random() * tmpArr.length) + 1);
+	      randValue = tmpArr[randIndex];
 	      gameArray[randValue] = "_";
-	      difficultyArr.splice(randValue,1);
-	      n--
+	      tmpArr.splice(randIndex, 1);
+	      level--
 	    }  
-	    return gameArray;
+
+	    gameObj.gameMatrix = gameArray;
+	    gameObj.solutionMatrix = solution;
+
+	    return gameObj;
 		},
 
-		getIndexArray: function() {
-			var gridArr = [];
-	    for(var i=0; i<81; i++) {
-	      gridArr[i] = i+1;
-	    }
-	    return gridArr;
+		processLevel: function(level) {
+			var levelValue = 0;
+			switch(level) {
+				case("easy"):
+					levelValue = 20;
+					break;
+				case("medium"):
+					levelValue = 40;
+					break;
+				case("hard"):
+					levelValue = 60;
+					break;
+				case("impossible"):
+					levelValue = 70;
+					break;
+			}
+			return levelValue;
 		},
 
-		verifyAnswer: function(n, index, gameArr, solutionArr) {
-			if(n === solutionArr[index]) {
+		verifyAnswer: function(n, index, gameObj) {
+			if(n === gameObj.solutionMatrix[index]) {
+      	gameObj.gameMatrix[index] = n;
       	console.log("you're right smartie pants");
-      	gameArr[index] = n;
       	return true;
     	} else {
       	console.log("wrong awnser stupid");

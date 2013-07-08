@@ -21,19 +21,17 @@
   <!-- <h2>{{title}}</h2> -->
 
 
-<!--   <h2>{{hiWorld}}</h2> -->
-
   <div>Difficulty: {{level}}</div>
 
   <form name="myForm" id="settings">
-    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="easy" checked>Easy</label>
-    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="medium">Medium</label>
-    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="hard">Hard</label>
-    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.srcElement.value)" value="impossible">Impossible</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="easy" checked>Easy</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="medium">Medium</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="hard">Hard</label>
+    <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="impossible">Impossible</label>
   </form>
 
   <div id="grid">
-    <div ng-repeat="num in gameGrid" class="grid-box">
+    <div ng-repeat="num in gameObj.gameMatrix" class="grid-box">
       <span ng-click="inputFromBoard($index, num)">{{num}}</span>
     </div>
   </div>
