@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="sudoku">
+<html lang="en" ng-app="myAwesomeApp">
 <head>
 
   <title>Sudoku AngularJS App</title>
@@ -10,8 +10,9 @@
   <script src="js/sudoku.js"></script>
 
   <script src="lib/angular/angular.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/services.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/SudokuCtrl.js"></script>
+  <script src="js/services/services.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
 
 
@@ -29,6 +30,8 @@
     <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="hard">Hard</label>
     <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="impossible">Impossible</label>
   </form>
+
+  <div>You have completed {{percentageRemaining}}%</div>
 
   <div id="grid">
     <div ng-repeat="num in gameObj.gameMatrix" class="grid-box">

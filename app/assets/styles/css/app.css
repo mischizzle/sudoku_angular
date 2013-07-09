@@ -30,7 +30,6 @@
 .grid-box {
   float: left;
   width: 40px;
-  border: 1px solid gray;
   text-align: center;
 }
 .grid-box span {
