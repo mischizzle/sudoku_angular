@@ -16,7 +16,7 @@ myAwesomeApp.controller('SudokuCtrl',
 
 
     $scope.changeLevel = function(level) {
-      console.log("change level to: " + level);
+      confirm("This will start a new game");
       $scope.gameObj = SudokuGame.newGame(level);
       return level;
     }
@@ -29,11 +29,15 @@ myAwesomeApp.controller('SudokuCtrl',
       }
     }
 
-    $scope.inputFromNumbers = function(answer) {
+    $scope.inputAnswerCell = function(answer) {
       var answer = SudokuGame.verifyAnswer(answer, $scope.userSelectionIndex, $scope.gameObj);
       if(answer) {
         $scope.permissions = false;  
       }
+    }
+
+    $scope.inputHint = function(number) { 
+      return number;
     }
   }
 );

@@ -42,9 +42,14 @@ myAwesomeApp.factory('SudokuGame',
 				count--
 			}  
 
+			gameObj.cellArr = [this.cell(1,3), this.cell(2,4), this.cell(3,5)];
 			gameObj.gameMatrix = gameArray;
 			gameObj.solutionMatrix = solution;
 			gameObj.levelNum = levelNum;
+
+			console.log(gameObj);
+			console.log(gameObj.cellArr[0]);
+			console.log(gameObj.cellArr[0].getCellId());
 
 			return gameObj;
 		},
@@ -65,8 +70,7 @@ myAwesomeApp.factory('SudokuGame',
 				levelValue = 70;
 				break;
 			}
-			console.log("progress level");
-			console.log(levelValue);
+
 			return levelValue;
 		},
 
@@ -99,6 +103,54 @@ myAwesomeApp.factory('SudokuGame',
 			var percentage = Math.floor((ansered/total)*100);
 
 			return percentage;
+		},
+
+		cell: function(id, answerValue) {
+			//Create the cell object
+			var cell;
+	
+			function Cell(cellId, cellAnswerValue) {
+				this.id = cellId,
+				this.answerValue = cellAnswerValue;
+				this.hints = [];
+				this.mutable = false;
+			}
+
+			Cell.prototype.getCellId = function() {
+				return this.id;
+			}
+
+			Cell.prototype.getCellAnswerValue = function() {
+				return this.answerValue;
+			}
+
+			Cell.prototype.addHint = function(n) {
+				var duplicate = false;
+				for(var i = 0; i<this.hints.length; i++) {
+					if(this.hints[i] === n) {
+						duplicate = true;
+					}
+				}
+				if(!duplicate) {
+					this.hints.push(n);
+				}
+				//reorder
+			}
+
+			Cell.prototype.addRemoveHint = function(n) {
+				//if hint is in hint array, remove it
+				//slice array
+				//reorder
+				this.hints.pop(n);
+			}
+
+			Cell.prototype.getHitsArray = function() {
+				return this.hints;
+			}
+
+			cell = new Cell(id, answerValue);
+
+			return cell;
 		}
 	};
 });

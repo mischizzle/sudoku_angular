@@ -12,17 +12,17 @@
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers/SudokuCtrl.js"></script>
-  <script src="js/services/services.js"></script>
+  <script src="js/services/SudokuGame.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
 
 
 </head>
 <body ng-controller="SudokuCtrl">
 
-  <!-- <h2>{{title}}</h2> -->
+  <h2>{{title}}</h2>
 
 
-  <div>Difficulty: {{level}}</div>
+  <h3>Difficulty: {{level}}</h3>
 
   <form name="myForm" id="settings">
     <label class="radio"><input type="radio" ng-model="level" ng-click="changeLevel($event.target.value)" value="easy" checked>Easy</label>
@@ -40,21 +40,41 @@
   </div>
 
   <div id="numOptions" ng-show="permissions">
+    <h3>Anser the box</h3>
     <table>
       <tr>
-        <td><button ng-click="inputFromNumbers(1)">1</button></td>
-        <td><button ng-click="inputFromNumbers(2)">2</button></td>
-        <td><button ng-click="inputFromNumbers(3)">3</button></td>
+        <td><button ng-click="inputAnswerCell(1)">1</button></td>
+        <td><button ng-click="inputAnswerCell(2)">2</button></td>
+        <td><button ng-click="inputAnswerCell(3)">3</button></td>
       </tr>
       <tr>
-        <td><button ng-click="inputFromNumbers(4)">4</button></td>
-        <td><button ng-click="inputFromNumbers(5)">5</button></td>
-        <td><button ng-click="inputFromNumbers(6)">6</button></td>
+        <td><button ng-click="inputAnswerCell(4)">4</button></td>
+        <td><button ng-click="inputAnswerCell(5)">5</button></td>
+        <td><button ng-click="inputAnswerCell(6)">6</button></td>
       </tr>
       <tr>
-        <td><button ng-click="inputFromNumbers(7)">7</button></td>
-        <td><button ng-click="inputFromNumbers(8)">8</button></td>
-        <td><button ng-click="inputFromNumbers(9)">9</button></td>
+        <td><button ng-click="inputAnswerCell(7)">7</button></td>
+        <td><button ng-click="inputAnswerCell(8)">8</button></td>
+        <td><button ng-click="inputAnswerCell(9)">9</button></td>
+      </tr>
+    </table>
+
+    <h3>Add a hint</h3>
+    <table>
+      <tr>
+        <td><button ng-click="hint(1)">1</button></td>
+        <td><button ng-click="hint(2)">2</button></td>
+        <td><button ng-click="hint(3)">3</button></td>
+      </tr>
+      <tr>
+        <td><button ng-click="hint(4)">4</button></td>
+        <td><button ng-click="hint(5)">5</button></td>
+        <td><button ng-click="hint(6)">6</button></td>
+      </tr>
+      <tr>
+        <td><button ng-click="hint(7)">7</button></td>
+        <td><button ng-click="hint(8)">8</button></td>
+        <td><button ng-click="hint(9)">9</button></td>
       </tr>
     </table>
   </div>
